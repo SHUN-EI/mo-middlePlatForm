@@ -14,15 +14,39 @@
 	<version>1.0-SNAPSHOT</version>
 	<name>mo-middlePlatform</name>
 	<packaging>pom</packaging>
+	<description>中台项目</description>
 
 	<modules>
 		<module>mo-middlePlatform-member</module>
 		<module>mo-middlePlatform-common</module>
+		<module>mo-middlePlatform-admin</module>
 	</modules>
 
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<version>2.2.8.RELEASE</version>
+		</dependency>
+
+		<!--集成druid连接池-->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid-spring-boot-starter</artifactId>
+			<version>1.1.10</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.mo</groupId>
+			<artifactId>mo-middlePlatform-common</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+
 
 
 </project>
