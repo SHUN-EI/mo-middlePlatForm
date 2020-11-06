@@ -1,12 +1,11 @@
 package com.mo.middlePlatform.controller;
 
+import com.mo.middlePlatform.command.MemberLoginCommand;
+import com.mo.middlePlatform.dto.DtoMPMemberInfo;
 import com.mo.middlePlatform.service.MemberAdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by mo on 2020/11/6
@@ -25,5 +24,11 @@ public class MemberAdminController {
                          @RequestParam String password,
                          @RequestParam String phone) {
         memberAdminService.register(username, password, phone);
+    }
+
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    @ResponseBody
+    public DtoMPMemberInfo login(@RequestBody MemberLoginCommand command) {
+        return memberAdminService.login(command);
     }
 }

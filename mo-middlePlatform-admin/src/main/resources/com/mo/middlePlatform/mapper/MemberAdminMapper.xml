@@ -8,4 +8,8 @@
     <insert id="addMember" parameterType="MPMember">
         insert into mp_member(username,password,phone,status,create_time) values(#{username},#{password},#{phone},#{status},#{createTime});
     </insert>
+
+    <select id="getMPMemberByUserNameAndPassword" parameterType="MPMember" resultType="MPMember">
+        select * from mp_member where username=#{username} and password=#{password};
+    </select>
 </mapper>
