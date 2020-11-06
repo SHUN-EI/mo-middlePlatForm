@@ -1,5 +1,7 @@
 package com.mo.middlePlatform.dto;
 
+import com.mo.middlePlatform.entity.MPMember;
+
 import java.util.Date;
 
 /**
@@ -36,6 +38,23 @@ public class DtoMPMemberInfo {
     private Date updateTime;
 
     public DtoMPMemberInfo() {
+    }
+
+    public DtoMPMemberInfo(MPMember member) {
+        this.id = member.getId();
+        this.username = member.getUsername();
+        this.password = member.getPassword();
+        this.nickname = member.getNickname();
+        this.phone = member.getPhone();
+        this.age = member.getAge();
+        this.gender = member.getGender();
+        this.icon = member.getIcon();
+        this.city = member.getCity();
+        this.personalizedSign = member.getPersonalizedSign();
+        this.birthday = member.getBirthday();
+        this.status = member.getStatus();
+        this.createTime = member.getCreateTime();
+        this.updateTime = member.getUpdateTime();
     }
 
     public Long getId() {

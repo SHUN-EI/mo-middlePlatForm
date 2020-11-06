@@ -1,6 +1,7 @@
 package com.mo.middlePlatform.controller;
 
 import com.mo.middlePlatform.command.MemberLoginCommand;
+import com.mo.middlePlatform.command.MemberRegisterCommand;
 import com.mo.middlePlatform.dto.DtoMPMemberInfo;
 import com.mo.middlePlatform.service.MemberAdminService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,10 +21,8 @@ public class MemberAdminController {
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     @ResponseBody
-    public void register(@RequestParam String username,
-                         @RequestParam String password,
-                         @RequestParam String phone) {
-        memberAdminService.register(username, password, phone);
+    public DtoMPMemberInfo register(@RequestBody MemberRegisterCommand command) {
+        return memberAdminService.register(command);
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)

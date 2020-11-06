@@ -1,6 +1,7 @@
 package com.mo.middlePlatform.service.impl;
 
 import com.mo.middlePlatform.command.MemberLoginCommand;
+import com.mo.middlePlatform.command.MemberRegisterCommand;
 import com.mo.middlePlatform.dto.DtoMPMemberInfo;
 import com.mo.middlePlatform.entity.MPMember;
 import com.mo.middlePlatform.mapper.MemberAdminMapper;
@@ -21,15 +22,18 @@ public class MemberAdminServiceImpl implements MemberAdminService {
     private MemberAdminMapper memberAdminMapper;
 
     @Override
-    public void register(String username, String password, String phone) {
+    public DtoMPMemberInfo register(MemberRegisterCommand command) {
 
         MPMember mpMember = new MPMember();
-        mpMember.setUsername(username);
-        mpMember.setPassword(password);
-        mpMember.setPhone(phone);
+        mpMember.setUsername(command.getUsername());
+        mpMember.setPassword(command.getPassword());
+        mpMember.setPhone(command.getPhone());
         mpMember.setCreateTime(new Date());
         mpMember.setStatus(1);
         memberAdminMapper.addMember(mpMember);
+
+        DtoMPMemberInfo dtoMPMemberInfo = new DtoMPMemberInfo(mpMember);
+        return dtoMPMemberInfo;
     }
 
     @Override
@@ -40,10 +44,7 @@ public class MemberAdminServiceImpl implements MemberAdminService {
 
         MPMember member = memberAdminMapper.getMPMemberByUserNameAndPassword(mpMember);
 
-        DtoMPMemberInfo dtoMPMemberInfo = new DtoMPMemberInfo();
-        dtoMPMemberInfo.setUsername(member.getUsername());
-        dtoMPMemberInfo.setPassword(member.getPassword());
-
+        DtoMPMemberInfo dtoMPMemberInfo = new DtoMPMemberInfo(member);
         return dtoMPMemberInfo;
     }
 }
