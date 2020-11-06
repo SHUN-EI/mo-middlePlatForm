@@ -15,4 +15,12 @@
     <packaging>jar</packaging>
     <description>公共模块</description>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+            <version>6.4.1</version>
+        </dependency>
+    </dependencies>
+
 </project>
