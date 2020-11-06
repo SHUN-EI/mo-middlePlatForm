@@ -38,6 +38,27 @@ public class MPMember {
     //确认密码
     private String repassword;
 
+    public MPMember() {
+    }
+
+    public MPMember(Long id, String username, String password, String nickname, String phone, Integer age, Integer gender, String icon, String city, String personalizedSign, Date birthday, Integer status, Date createTime, Date updateTime, String repassword) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.nickname = nickname;
+        this.phone = phone;
+        this.age = age;
+        this.gender = gender;
+        this.icon = icon;
+        this.city = city;
+        this.personalizedSign = personalizedSign;
+        this.birthday = birthday;
+        this.status = status;
+        this.createTime = createTime;
+        this.updateTime = updateTime;
+        this.repassword = repassword;
+    }
+
     public Long getId() {
         return id;
     }
