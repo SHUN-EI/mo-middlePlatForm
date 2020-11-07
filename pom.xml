@@ -12,7 +12,6 @@
 	<groupId>com.mo</groupId>
 	<artifactId>mo-middlePlatform</artifactId>
 	<version>1.0-SNAPSHOT</version>
-	<name>mo-middlePlatform</name>
 	<packaging>pom</packaging>
 	<description>中台项目</description>
 
@@ -27,12 +26,6 @@
 	</properties>
 
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-			<version>2.2.8.RELEASE</version>
-		</dependency>
-
 		<!--集成druid连接池-->
 		<dependency>
 			<groupId>com.alibaba</groupId>
