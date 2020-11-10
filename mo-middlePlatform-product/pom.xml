@@ -9,15 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>mo-middlePlatform-admin</artifactId>
-    <description>会员模块</description>
+    <artifactId>mo-middlePlatform-product</artifactId>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
-            <version>2.2.8.RELEASE</version>
-        </dependency>
 
-    </dependencies>
 </project>
