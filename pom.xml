@@ -18,7 +18,6 @@
 	<modules>
 		<module>mo-middlePlatform-member</module>
 		<module>mo-middlePlatform-common</module>
-		<module>mo-middlePlatform-admin</module>
 		<module>mo-middlePlatform-product</module>
 	</modules>
 
