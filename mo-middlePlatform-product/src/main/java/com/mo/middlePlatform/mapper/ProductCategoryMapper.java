@@ -8,4 +8,8 @@ import com.mo.middlePlatform.entity.MPProductCategory;
 public interface ProductCategoryMapper {
 
     int addProductCategory(MPProductCategory productCategory);
+
+    int updateProductCategory(MPProductCategory productCategory);
+
+    MPProductCategory queryById(Long id);
 }

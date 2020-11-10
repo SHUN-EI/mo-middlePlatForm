@@ -5,6 +5,8 @@ package com.mo.middlePlatform.command;
  */
 public class ProductCategoryCommand {
 
+    private Long id;
+
     private Long parentId;
 
     private String name;
@@ -12,6 +14,14 @@ public class ProductCategoryCommand {
     private Integer level;
 
     private String description;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public Long getParentId() {
         return parentId;

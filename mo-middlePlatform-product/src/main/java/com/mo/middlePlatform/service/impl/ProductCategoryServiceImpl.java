@@ -34,4 +34,21 @@ public class ProductCategoryServiceImpl implements ProductCategoryService {
 
         return dtoMPProductCategoryInfo;
     }
+
+    @Override
+    public DtoMPProductCategoryInfo update(ProductCategoryCommand command) {
+
+        MPProductCategory productCategory = productCategoryMapper.queryById(command.getId());
+        productCategory.setName(command.getName());
+        productCategory.setDescription(command.getDescription());
+        productCategory.setLevel(command.getLevel());
+        productCategory.setParentId(command.getParentId());
+        productCategory.setUpdateTime(new Date());
+
+        productCategoryMapper.updateProductCategory(productCategory);
+
+        DtoMPProductCategoryInfo dtoMPProductCategoryInfo = new DtoMPProductCategoryInfo(productCategory);
+
+        return dtoMPProductCategoryInfo;
+    }
 }

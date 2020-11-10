@@ -18,4 +18,9 @@ public interface ProductCategoryService {
      */
     @Transactional
     DtoMPProductCategoryInfo create(ProductCategoryCommand command);
+
+    @Transactional
+    DtoMPProductCategoryInfo update(ProductCategoryCommand command);
+
+
 }

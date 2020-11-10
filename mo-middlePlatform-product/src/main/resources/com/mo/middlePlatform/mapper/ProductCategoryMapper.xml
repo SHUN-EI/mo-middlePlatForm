@@ -9,4 +9,12 @@
         insert into mp_product_category(parent_id,name,level,description,create_time) values(#{parentId},#{name},#{level},#{description},#{createTime});
     </insert>
 
+    <update id="updateProductCategory" parameterType="MPProductCategory">
+        update mp_product_category set parent_id=#{parentId}, name =#{name},level =#{level},description=#{description},update_time=#{updateTime} where id=#{id};
+    </update>
+
+    <select id="queryById" parameterType="java.lang.Long" resultType="MPProductCategory">
+        select  *  from mp_product_category where id=#{id};
+    </select>
+
 </mapper>

@@ -22,4 +22,11 @@ public class ProductCategoryController {
         DtoMPProductCategoryInfo dtoMPProductCategoryInfo = productCategoryService.create(command);
         return dtoMPProductCategoryInfo;
     }
+
+    @RequestMapping(value = "/update", method = RequestMethod.POST)
+    @ResponseBody
+    public DtoMPProductCategoryInfo update(@RequestBody ProductCategoryCommand command) {
+        DtoMPProductCategoryInfo dtoMPProductCategoryInfo = productCategoryService.update(command);
+        return dtoMPProductCategoryInfo;
+    }
 }
