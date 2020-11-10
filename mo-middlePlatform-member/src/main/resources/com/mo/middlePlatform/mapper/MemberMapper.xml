@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!--namespace=绑定一个对应的Dao/Mapper接口-->
-<mapper namespace="com.mo.middlePlatform.mapper.MemberAdminMapper">
+<mapper namespace="com.mo.middlePlatform.mapper.MemberMapper">
 
     <insert id="addMember" parameterType="MPMember">
         insert into mp_member(username,password,phone,status,create_time) values(#{username},#{password},#{phone},#{status},#{createTime});
