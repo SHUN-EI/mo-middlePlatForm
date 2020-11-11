@@ -28,6 +28,7 @@ public class ProductCategoryServiceImpl implements ProductCategoryService {
         productCategory.setLevel(command.getLevel());
         productCategory.setDescription(command.getDescription());
         productCategory.setCreateTime(new Date());
+        productCategory.setUpdateTime(new Date());
         productCategoryMapper.addProductCategory(productCategory);
 
         DtoMPProductCategoryInfo dtoMPProductCategoryInfo = new DtoMPProductCategoryInfo(productCategory);

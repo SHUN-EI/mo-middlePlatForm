@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by mo on 2020/11/10
+ * 商品类目管理
  */
 @RestController
 @RequestMapping("/productCategory")
