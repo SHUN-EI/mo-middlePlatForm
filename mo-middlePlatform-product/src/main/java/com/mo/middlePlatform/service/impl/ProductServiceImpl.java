@@ -8,7 +8,7 @@ import com.mo.middlePlatform.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
+import java.util.*;
 
 /**
  * Created by mo on 2020/11/11
@@ -38,5 +38,25 @@ public class ProductServiceImpl implements ProductService {
         DtoMPProductInfo dtoMPProductInfo = new DtoMPProductInfo(product);
 
         return dtoMPProductInfo;
+    }
+
+    @Override
+    public List<DtoMPProductInfo> updateVerifyStatus(ProductCommand command) {
+        List<DtoMPProductInfo> dtoMPProductInfos = new ArrayList<>();
+        List<Long> ids = command.getIds();
+        Map<String, Object> map = new HashMap<>();
+        map.put("ids", ids);
+        map.put("verifyStatus", command.getVerifyStatus());
+        map.put("verifyTime", new Date());
+        map.put("updateTime", new Date());
+
+        productMapper.updateProductVerifyStatus(map);
+
+        ids.forEach(id -> {
+            MPProduct product = productMapper.queryById(id);
+            dtoMPProductInfos.add(new DtoMPProductInfo(product));
+        });
+
+        return dtoMPProductInfos;
     }
 }

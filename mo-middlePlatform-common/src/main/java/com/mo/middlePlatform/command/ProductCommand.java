@@ -2,6 +2,7 @@ package com.mo.middlePlatform.command;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by mo on 2020/11/11
@@ -19,6 +20,26 @@ public class ProductCommand {
     private Integer stockNums;
 
     private String picture;
+
+    private List<Long> ids;
+
+    private Integer verifyStatus;
+
+    public Integer getVerifyStatus() {
+        return verifyStatus;
+    }
+
+    public void setVerifyStatus(Integer verifyStatus) {
+        this.verifyStatus = verifyStatus;
+    }
+
+    public List<Long> getIds() {
+        return ids;
+    }
+
+    public void setIds(List<Long> ids) {
+        this.ids = ids;
+    }
 
     public Long getProductCategoryId() {
         return productCategoryId;

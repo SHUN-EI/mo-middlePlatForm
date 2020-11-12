@@ -8,21 +8,29 @@ import com.mo.middlePlatform.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * Created by mo on 2020/11/11
  * 商品管理
  */
 @RestController
-@RequestMapping("product")
+@RequestMapping("/product")
 public class ProductController {
 
     @Autowired
     private ProductService productService;
 
-    @RequestMapping(value = "/create",method = RequestMethod.POST)
+    @RequestMapping(value = "/create", method = RequestMethod.POST)
     public DtoMPProductInfo create(@RequestBody ProductCommand command) {
         DtoMPProductInfo dtoMPProductInfo = productService.create(command);
         return dtoMPProductInfo;
+    }
+
+    @RequestMapping(value = "/updateVerifyStatus", method = RequestMethod.POST)
+    public List<DtoMPProductInfo> updateVerifyStatus(@RequestBody ProductCommand command) {
+        List<DtoMPProductInfo> dtoMPProductInfos = productService.updateVerifyStatus(command);
+        return dtoMPProductInfos;
     }
 
 }

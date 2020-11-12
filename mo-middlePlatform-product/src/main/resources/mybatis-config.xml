@@ -6,7 +6,8 @@
 <configuration>
     <!--设置驼峰命名映射-->
     <settings>
-        <setting name= "mapUnderscoreToCamelCase" value="true"/>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
     </settings>
 
     <typeAliases>

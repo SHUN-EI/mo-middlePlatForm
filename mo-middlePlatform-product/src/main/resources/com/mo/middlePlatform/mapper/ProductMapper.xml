@@ -9,4 +9,16 @@
         insert into mp_product(product_category_id,name,title,price,verify_status,stock_nums,picture,delete_status,create_time,update_time)values(#{productCategoryId},#{name},#{title},#{price},#{verifyStatus},#{stockNums},#{picture},#{deleteStatus},#{createTime},#{updateTime});
     </insert>
 
+    <update id="updateProductVerifyStatus" parameterType="map">
+        update mp_product set verify_status=#{verifyStatus},verify_time=#{verifyTime},update_time=#{updateTime}
+        where id in
+        <foreach collection="ids" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </update>
+
+    <select id="queryById" parameterType="java.lang.Long" resultType="MPProduct">
+        select *  from  mp_product where id=#{id};
+    </select>
+
 </mapper>
